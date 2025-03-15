@@ -1,0 +1,14 @@
+{
+	"name": "daily-algo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "algo.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "node --watch algo.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.6.2"
+}
