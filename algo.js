@@ -75,4 +75,30 @@ function convertNumberToRoman(num) {
 	return result;
 }
 
-convertNumberToRoman(8);
+convertNumberToRoman(985);
+
+// Day 3
+//Write a function that returns a array of even numbers if none return an empty array.
+
+function evenNumber(arr = [5, 2, 24, 8, 9]) {
+	return arr.filter((el) => el % 2 === 0);
+}
+
+evenNumber();
+
+//Write a function which takes a character string as input and returns an object containing the number of occurrences of each character in the string
+
+function numberOfOccurences(str = 'Hello world') {
+	const cleanStr = str.toLocaleLowerCase().replace(/\s/g, '').split('');
+	let result = {};
+	for (const char of cleanStr) {
+		if (result[char]) {
+			result[char]++;
+		} else {
+			result[char] = 1;
+		}
+	}
+
+	return result;
+}
+console.log(numberOfOccurences());
