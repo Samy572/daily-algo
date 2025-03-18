@@ -101,4 +101,34 @@ function numberOfOccurences(str = 'Hello world') {
 
 	return result;
 }
-console.log(numberOfOccurences());
+numberOfOccurences();
+
+// Day 4
+//Write a function which takes a string as input and returns the number of words in the string
+
+function countNumberOfWord(str = 'Hello world') {
+	return str.split(' ').length;
+}
+
+countNumberOfWord();
+
+//Write a function which takes a list of numbers and return true if all the numbers are positive
+
+function areAllnumberArePositive(arr = [2, 4, 6, 8, 9, -2]) {
+	return arr.every((num) => num > 0);
+}
+
+areAllnumberArePositive();
+
+// Write a function which take an array of user object and return true if user he's over 17yo and email address contains @
+
+function areAllUsersValid(
+	users = [
+		{ name: 'Charlie', age: 17, email: 'charlie@example.com' },
+		{ name: 'David', age: 22, email: 'davidexample.com' },
+	]
+) {
+	return users.every((user) => user.age > 17 && user.email.includes('@'));
+}
+
+console.log(areAllUsersValid());
