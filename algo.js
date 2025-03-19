@@ -131,4 +131,29 @@ function areAllUsersValid(
 	return users.every((user) => user.age > 17 && user.email.includes('@'));
 }
 
-console.log(areAllUsersValid());
+areAllUsersValid();
+
+// Day 5
+// Write a function which take a number array and return the biggest number
+
+function returnTheBiggestNumber(arr = [113, 985, 119]) {
+	return Math.max(...arr);
+}
+
+returnTheBiggestNumber();
+
+/* Write a function that displays numbers from 1 to n, but: 
+	 Replaces multiples of 3 with "Fizz"
+ 	 Replaces multiples of 5 with "Buzz"
+	 Replaces multiples of 3 and 5 with "FizzBuzz". */
+
+function FizzBuzz(num = 15) {
+	return Array.from({ length: num }, (_, i) => {
+		let val = '';
+		if ((i + 1) % 5 === 0) val += 'Fizz';
+		if ((i + 1) % 3 === 0) val += 'Buzz';
+		return val || i + 1;
+	});
+}
+
+FizzBuzz();
