@@ -157,3 +157,27 @@ function FizzBuzz(num = 15) {
 }
 
 FizzBuzz();
+
+// Day 6
+// Write a function which take a string and return the fisrt unique character
+
+function firstUniqueCharacter(str = 'swpwiws') {
+	const cleanArr = str.toLocaleLowerCase().replace(/\s/g, '').split('');
+	for (let i = 0; i < cleanArr.length; i++) {
+		if (cleanArr.indexOf(cleanArr[i]) === cleanArr.lastIndexOf(cleanArr[i])) {
+			return cleanArr[i];
+		}
+	}
+}
+
+firstUniqueCharacter();
+
+// Write a function which return the second biggest number without using sort()
+
+function secondBiggestNumber(arr = [25, 15, 36, 85, 4]) {
+	const max = Math.max(...arr);
+	const filterArr = arr.filter((el) => el !== max);
+	return filterArr ? Math.max(...filterArr) : null;
+}
+
+secondBiggestNumber();
