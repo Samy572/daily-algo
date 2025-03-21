@@ -181,3 +181,38 @@ function secondBiggestNumber(arr = [25, 15, 36, 85, 4]) {
 }
 
 secondBiggestNumber();
+
+//Day 7
+// Write a function wich take a string and return the numbers of vowels
+
+function countNumberofVowels(str = 'hello world') {
+	const vowels = ['a', 'e', 'u', 'i', 'o', 'y'];
+	let result = 0;
+
+	for (const element of [...str.toLocaleLowerCase()]) {
+		if (vowels.includes(element)) result++;
+	}
+	return result;
+}
+
+countNumberofVowels();
+
+// Write a function wich take a string and return an object with the frequency of each vowels
+
+function vowelsFrequency(str = 'Helloo world') {
+	let result = {};
+
+	const vowels = [...str.toLocaleLowerCase()].filter((el) =>
+		'aeiouy'.includes(el)
+	);
+	for (const vowel of vowels) {
+		if (result[vowel]) {
+			result[vowel]++;
+		} else {
+			result[vowel] = 1;
+		}
+	}
+	return result;
+}
+
+vowelsFrequency();
