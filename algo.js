@@ -216,3 +216,13 @@ function vowelsFrequency(str = 'Helloo world') {
 }
 
 vowelsFrequency();
+
+// Day 8
+// Write a function which take a string and return the longest word
+
+function longestWordInString(str = 'How are you today') {
+	str = str.split(' ');
+	return str.sort((a, b) => b.length - a.length)[0];
+}
+
+(longestWordInString());
