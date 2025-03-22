@@ -225,4 +225,12 @@ function longestWordInString(str = 'How are you today') {
 	return str.sort((a, b) => b.length - a.length)[0];
 }
 
-(longestWordInString());
+longestWordInString();
+
+// Write a function wich remove duplicate from an array of number
+
+function removeDuplicate(arr = [1, 1, 1, 3, 6, 6, 5, 6, 2, 1]) {
+	return [...new Set(arr)];
+}
+
+removeDuplicate();
