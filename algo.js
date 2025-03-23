@@ -234,3 +234,20 @@ function removeDuplicate(arr = [1, 1, 1, 3, 6, 6, 5, 6, 2, 1]) {
 }
 
 removeDuplicate();
+
+// Day 9
+// Write a function which take a string and return the number of words in the string
+
+function countNumberOfCharacter(str = 'Hello world') {
+	return str.replace(/\s/g, '').split('').length;
+}
+
+countNumberOfCharacter();
+
+// Write a function wich take an array of number and return the average
+
+function average(arr = [7, 8, 55, 6, 2, 4]) {
+	return Math.round(arr.reduce((acc, curr) => (acc += curr)) / arr.length);
+}
+
+(average());
