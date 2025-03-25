@@ -250,4 +250,22 @@ function average(arr = [7, 8, 55, 6, 2, 4]) {
 	return Math.round(arr.reduce((acc, curr) => (acc += curr)) / arr.length);
 }
 
-(average());
+average();
+
+// Day 10
+// Write a function wich take a string and capitalize the first letter of each word
+
+function capitalizeFirstLetterOfEachWord(
+	str = 'Hello everyone how are yoU ? '
+) {
+	const words = str.toLowerCase().split(' ');
+	capitalizeFirstWord = words.map((el) => {
+		if (el) {
+			// H + everyone
+			return el[0].toUpperCase() + el.slice(1);
+		}
+	});
+	return capitalizeFirstWord.join(' ');
+}
+
+capitalizeFirstLetterOfEachWord();
