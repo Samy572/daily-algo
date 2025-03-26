@@ -269,3 +269,15 @@ function capitalizeFirstLetterOfEachWord(
 }
 
 capitalizeFirstLetterOfEachWord();
+
+// Day 11
+// Write a function wich take a number and return the factorial of a number ex 5 = 5*4*3*2*1 = 120.
+
+function factorialNumber(num = 5) {
+	const arr = Array.from({ length: num }, (_, i) => i + 1);
+	let result = arr.reduce((acc, curr) => {
+		return acc * curr;
+	});
+	return result;
+}
+factorialNumber();
