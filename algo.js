@@ -281,3 +281,16 @@ function factorialNumber(num = 5) {
 	return result;
 }
 factorialNumber();
+
+// Write a recursive function wich take a number an return the sum of each number ex for 123 return 1+2+3 = 6
+
+function recursiveSum(num = 270) {
+	if (num === 0) {
+		return 0;
+	}
+	const lastDigit = num % 10;
+	const rest = Math.floor(num / 10);
+	return lastDigit + recursiveSum(rest);
+}
+
+(recursiveSum());
