@@ -293,4 +293,25 @@ function recursiveSum(num = 270) {
 	return lastDigit + recursiveSum(rest);
 }
 
-(recursiveSum());
+recursiveSum();
+
+// Write a recursive function wich take a number and return the number of digits.
+
+function recursiveDigit(num = 123) {
+	if (num < 10) {
+		return 1;
+	}
+	const rest = Math.floor(num / 10);
+	return 1 + recursiveDigit(rest);
+}
+
+recursiveDigit();
+
+// Write a recursive function wich take a string and return the reverse string without using loop or reverse method.
+
+function reverseRecursiveString(str = 'Hello') {
+	if (str.length >= 1) {
+		return str;
+	}
+	return reverseRecursiveString(str.slice(1) + str[0]);
+}
