@@ -315,3 +315,20 @@ function reverseRecursiveString(str = 'Hello') {
 	}
 	return reverseRecursiveString(str.slice(1) + str[0]);
 }
+
+// Day 12
+// Write a function to shuffle an array randomly
+
+function shuffleAnArray(arr = ['hello', 113, 5, 'world', 8, 511, 9]) {
+	let shuffleArr = [];
+	while (arr.length > shuffleArr.length) {
+		let random = Math.floor(Math.random() * arr.length);
+		let newEl = arr[random];
+		if (!shuffleArr.includes(newEl)) {
+			shuffleArr.push(newEl);
+		}
+	}
+	return shuffleArr;
+}
+
+shuffleAnArray();
