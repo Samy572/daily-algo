@@ -332,24 +332,3 @@ function shuffleAnArray(arr = ['hello', 113, 5, 'world', 8, 511, 9]) {
 }
 
 shuffleAnArray();
-
-// Day 13
-// Write a function that take a string with lowercase and uppercase letter and swap the case ex : heLLo => HEllO
-
-function swapCase(str = 'HELLo WOrlD') {
-	let result = [...str].map((el) =>
-		el === el.toLocaleLowerCase() ? el.toUpperCase() : el.toLowerCase()
-	);
-	return result.join('');
-}
-
-swapCase();
-
-// Write a function that take a string and return each word reverse ex : Hello World => olleH dlroW
-
-function reverseEachWord(str = 'Hello world') {
-	const result = str.split(' ').map((el) => [...el].reverse().join(''));
-	return result.join(' ')
-}
-
-(reverseEachWord());
