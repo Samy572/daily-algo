@@ -385,4 +385,20 @@ function mergeWithoutDuplicate(
 	return [...new Set(arr1, arr2)];
 }
 
-(mergeWithoutDuplicate());
+mergeWithoutDuplicate();
+
+// Write a function to get all the indexes where NaN is found in a giver array of numbers and Nan.
+
+function findIndexOfNaN(arr = [10, 5, 88, NaN, 15, NaN]) {
+	let result = [];
+
+	arr.forEach((el, i) => {
+		if (Number.isNaN(el)) {
+			result.push(i);
+		}
+	});
+	return result;
+}
+
+findIndexOfNaN();
+
