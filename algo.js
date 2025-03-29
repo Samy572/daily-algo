@@ -349,12 +349,12 @@ swapCase();
 
 function reverseEachWord(str = 'Hello world') {
 	const result = str.split(' ').map((el) => [...el].reverse().join(''));
-	return result.join(' ')
+	return result.join(' ');
 }
 
-(reverseEachWord());
+reverseEachWord();
 
-// Day 13
+// Day 14
 // Write a function that take a string with lowercase and uppercase letter and swap the case ex : heLLo => HEllO
 
 function swapCase(str = 'HELLo WOrlD') {
@@ -370,7 +370,19 @@ swapCase();
 
 function reverseEachWord(str = 'Hello world') {
 	const result = str.split(' ').map((el) => [...el].reverse().join(''));
-	return result.join(' ')
+	return result.join(' ');
 }
 
-console.log(reverseEachWord('test'));
+reverseEachWord('test');
+
+// Day 15
+// Write a function that take two array of number and merge them without duplicate
+
+function mergeWithoutDuplicate(
+	arr1 = [283, 58, 33, 22],
+	arr2 = [311, 958, 22, 33]
+) {
+	return [...new Set(arr1, arr2)];
+}
+
+(mergeWithoutDuplicate());
