@@ -417,3 +417,18 @@ function biggestNumber(arr = [16, 34, 25, 7]) {
 }
 
 biggestNumber();
+
+// Write a function to transform a string of charachter into a camelCase ex : Hello world => helloWorld
+
+function transformToCamelCase(str = 'Hello world') {
+	let words = str.toLowerCase().split('');
+	for (let i = 0; i < words.length; i++) {
+		if (words[i - 1] === ' ') {
+			words[i] = words[i].toUpperCase();
+			words[i - 1] = '';
+		}
+	}
+	return words.join('');
+}
+
+transformToCamelCase();
