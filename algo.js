@@ -402,3 +402,18 @@ function findIndexOfNaN(arr = [10, 5, 88, NaN, 15, NaN]) {
 
 findIndexOfNaN();
 
+// Day 16
+// Write a function wich take an array of number and return the biggest number without using Math.max
+
+function biggestNumber(arr = [16, 34, 25, 7]) {
+	let result = arr[0];
+
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] > result) {
+			result = arr[i];
+		}
+	}
+	return result;
+}
+
+biggestNumber();
