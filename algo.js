@@ -432,3 +432,15 @@ function transformToCamelCase(str = 'Hello world') {
 }
 
 transformToCamelCase();
+
+// Write a function to truncate a string to a given length ex : Hello world,5 => Hello...
+
+function truncateString(str = 'Hello world', target = 7) {
+	if (str.length > target) {
+		return str.slice(0, target) + '...';
+	} else {
+		return str;
+	}
+}
+
+(truncateString());
