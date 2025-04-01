@@ -433,6 +433,7 @@ function transformToCamelCase(str = 'Hello world') {
 
 transformToCamelCase();
 
+// Day 17
 // Write a function to truncate a string to a given length ex : Hello world,5 => Hello...
 
 function truncateString(str = 'Hello world', target = 7) {
@@ -443,4 +444,22 @@ function truncateString(str = 'Hello world', target = 7) {
 	}
 }
 
-(truncateString());
+truncateString();
+
+// Day 18
+// Write a cesar encryption function wich take a string and a number and return the encryption ex hello, 3 => khoor or hi => kl
+
+function cesarEncryption(str = 'hello', target = 3) {
+	const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+	let result = '';
+
+	for (let i = 0; i < str.length; i++) {
+		let letterIndex = alphabet.indexOf(str[i]);
+		let newIndex = (letterIndex + target) % alphabet.length;
+
+		result += alphabet[newIndex];
+	}
+	return result;
+}
+
+cesarEncryption();
