@@ -463,3 +463,18 @@ function cesarEncryption(str = 'hello', target = 3) {
 }
 
 cesarEncryption();
+
+// Day 19
+// Wirte a function wich take a string and returns the first unreapeted character.
+
+function firstUnreapeatedChar(str = 'hhelloo') {
+	let indexArr = [...str].map((el) => str.indexOf(el));
+
+	for (let i = 0; i < indexArr.length; i++) {
+		if (indexArr.indexOf(indexArr[i]) === indexArr.lastIndexOf(indexArr[i])) {
+			return str[i];
+		}
+	}
+}
+
+firstUnreapeatedChar();
