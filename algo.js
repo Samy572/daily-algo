@@ -478,3 +478,22 @@ function firstUnreapeatedChar(str = 'hhelloo') {
 }
 
 firstUnreapeatedChar();
+
+// Day 20
+// Write a function wich take a number and multiplies its numbers together until a single number is obtained.
+// Returns the number of iterations required ex => 39 => 3*9=27 => 2*7 = 14 => 1*5 =5 return 3 step
+
+function multiplieTogether(num = 478) {
+	let arrayOfNumber = Array.from(String(num), Number);
+	let result = 0;
+	while (arrayOfNumber.length > 1) {
+		result++;
+		let val = arrayOfNumber.reduce((acc, curr) => {
+			return acc * curr;
+		});
+		arrayOfNumber = Array.from(String(val), Number);
+	}
+	return result;
+}
+
+console.log(multiplieTogether());
