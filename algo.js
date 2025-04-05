@@ -494,4 +494,38 @@ function multiplieTogether(num = 999) {
 	return result;
 }
 
-console.log(multiplieTogether());
+multiplieTogether();
+
+// Day 21
+// Write a function wich take an array of numbers and return the sum of all the numbers positive. Ex => [1,-3,5,6,-2] => 12
+
+function sumOfPositiv(arr = [1, -3, 5, 6, -2]) {
+	const filteredArr = arr.filter((el) => el > 0);
+	const result =
+		filteredArr.length === 0
+			? 0
+			: filteredArr.reduce((acc, curr) => acc + curr);
+	return result;
+}
+
+sumOfPositiv();
+
+// Day 22
+// Write a function wich take a string and returns a string in which each letter of the word is written in a staircase.
+/* Ex hi => 
+	h
+		i */
+
+function stairCase(str = 'hello') {
+	let result = '';
+	for (let i = 0; i < str.length; i++) {
+		if (i >= 1) {
+			result += `\n ${' '.repeat(i)} ${str[i]}`;
+		} else {
+			result += ` ${str[i]}`;
+		}
+	}
+	return result;
+}
+
+stairCase();
