@@ -524,4 +524,17 @@ function stairCase(str = 'hello') {
 	return result;
 }
 
-console.log(stairCase());
+stairCase();
+
+// Day 23
+// Write a function wich take an array of numbers and return the missing number ex [1,5,4,2] => return 3
+
+function missingNumber(arr = [1, 2, 3, 4, 5, 7]) {
+	let result =
+		[...arr]
+			.sort((a, b) => a - b)
+			.find((el, i, ar) => ar[i + 1] - ar[i] !== 1) + 1;
+	console.log(result);
+}
+
+missingNumber();
