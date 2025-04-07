@@ -534,7 +534,27 @@ function missingNumber(arr = [1, 2, 3, 4, 5, 7]) {
 		[...arr]
 			.sort((a, b) => a - b)
 			.find((el, i, ar) => ar[i + 1] - ar[i] !== 1) + 1;
-	console.log(result);
 }
 
 missingNumber();
+
+// Day 24
+// Write a function to find the most frequent item in an array ex: [1,"a", 2, "a", 3, 1, "a"] => return "a".
+
+function mostFrequentItem(arr = ['a', 3, 'a', 'b', 7, 11, 'a']) {
+	let newObj = {};
+
+	for (let i = 0; i < arr.length; i++) {
+		if (newObj[arr[i]]) {
+			newObj[arr[i]] += 1;
+		} else {
+			newObj[arr[i]] = 1;
+		}
+	}
+	let result = Object.entries(newObj).find(
+		([key, value]) => value === Math.max(...Object.values(newObj))
+	)[0];
+	return result;
+}
+
+mostFrequentItem();
