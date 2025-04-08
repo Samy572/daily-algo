@@ -558,3 +558,12 @@ function mostFrequentItem(arr = ['a', 3, 'a', 'b', 7, 11, 'a']) {
 }
 
 mostFrequentItem();
+
+// Day 25
+// Write a function which take an array and return a flatten array ex [9,11,[125,58,9], [3,11]] => [9,11,125,58,9,3,11]
+
+function flattenArray(arr = [9, 11, [125, 58, 9, [11, 22, 33]], [3, 11]]) {
+	return arr.flat(Infinity);
+}
+
+flattenArray();
