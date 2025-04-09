@@ -567,3 +567,17 @@ function flattenArray(arr = [9, 11, [125, 58, 9, [11, 22, 33]], [3, 11]]) {
 }
 
 flattenArray();
+
+// Day 26
+// Write a function which take an array an return the number of consecutive suitable numbers ex [1,2,3,4,5,7] => return 5
+
+function consecutiveSuitable(arr = [1, 2, 3, 4, 8, 5, 6, 7, 8, 9]) {
+	let count = 0;
+
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i + 1] === arr[i] + 1) count += 1;
+	}
+	return count;
+}
+
+consecutiveSuitable();
