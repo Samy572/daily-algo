@@ -581,3 +581,20 @@ function consecutiveSuitable(arr = [1, 2, 3, 4, 8, 5, 6, 7, 8, 9]) {
 }
 
 consecutiveSuitable();
+
+/* Day 27
+ Write a function wich take an array of number from 0 to n 
+ for multiples of 3 add Fizz in place of number and Buzz for multiples of 5 ex 5 => [1,2,Fizz, 4, Buzz] */
+
+function fizzBuzz(n = 10) {
+	let result = Array.from({ length: n }, (_, i) => {
+		i += 1;
+		if (i % 5 === 0 && i % 3 === 0) return 'Fizz Buzz';
+		if (i % 3 === 0) return 'Fizz';
+		if (i % 5 === 0) return 'Buzz';
+		return i;
+	});
+	return result;
+}
+
+console.log(fizzBuzz());
