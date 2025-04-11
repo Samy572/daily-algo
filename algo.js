@@ -597,4 +597,20 @@ function fizzBuzz(n = 10) {
 	return result;
 }
 
-console.log(fizzBuzz());
+fizzBuzz();
+
+// Day 28
+// Write a function wich take a number and return true or false if the number is polydivisible or not.
+// Polydivisible number is the number that is divisible by the sum of its digits ex 123  => 1/1 =2 => 12/2 = 6 => 123/3 = 41
+
+function isPolydivisible(num = 1239) {
+	let checker = [];
+	Array.from(String(num), Number).forEach((el, i, arr) => {
+		let subNumber = arr.slice(0, i + 1).join('');
+		if (Number.isInteger(subNumber / (i + 1))) return checker.push(true);
+		else return checker.push(false);
+	});
+	return checker.includes(false) ? false : true;
+}
+
+isPolydivisible();
