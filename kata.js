@@ -77,3 +77,16 @@ function solution(number) {
 }
 
 solution(25);
+
+// 8kyu Remove 0 at the end ex 10500 => 105
+
+function noBoringZeros(n) {
+	if (n === 0) {
+		return 0;
+	}
+	let findArrIndex = Array.from(String(n)).findLastIndex((el) => el !== '0');
+	let res = arr.slice(0, findArrIndex + 1).join('');
+	return parseInt(res);
+}
+noBoringZeros(0);
+
