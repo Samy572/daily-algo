@@ -90,3 +90,22 @@ function noBoringZeros(n) {
 }
 noBoringZeros(0);
 
+// 7kyu sum all odd number between 1 and n
+function OddNumber(n) {
+	return Array.from({ length: n }, (_, i) => i + 1)
+		.filter((el) => el % 2 !== 0)
+		.reduce((acc, curr) => (acc += curr));
+}
+
+OddNumber(42);
+
+// 7kyu change last character to capitalize
+function testit(s) {
+	let splitStr = s.split(' ');
+	return splitStr
+		.map((el) => el.slice(0, -1) + el.slice(-1).toUpperCase())
+		.join(' ');
+}
+
+console.log(testit('a ab vv cfge'));
+
