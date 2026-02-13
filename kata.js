@@ -106,6 +106,45 @@ function testit(s) {
 		.map((el) => el.slice(0, -1) + el.slice(-1).toUpperCase())
 		.join(' ');
 }
+testit('a ab vv cfge');
 
-console.log(testit('a ab vv cfge'));
+//7kyu removes all vowels from a string
 
+function disemvowel(str) {
+	const vowels = 'aeiou';
+	return str
+		.split('')
+		.filter((el) => !vowels.includes(el))
+		.join('');
+}
+
+disemvowel('hello comment ca va today');
+
+// 7kyu return price of shopping cart
+
+function getTotal(arr) {
+	const total = arr.reduce((acc, curr) => {
+		return acc + curr.quantity * curr.price;
+	}, 0);
+	return total;
+}
+
+getTotal(
+	(cart = [
+		{
+			product: 'shoes',
+			quantity: 7,
+			price: 50,
+		},
+		{
+			product: 'laptop',
+			quantity: 1,
+			price: 2010,
+		},
+		{
+			product: 'phone',
+			quantity: 2,
+			price: 450,
+		},
+	]),
+);
