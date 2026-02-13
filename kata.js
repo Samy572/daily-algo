@@ -148,3 +148,18 @@ getTotal(
 		},
 	]),
 );
+
+// 7kyu return a counter of the number of word in a string format {h: 1, e:1, l: 3 ect...}
+function countWords(str) {
+	return str.split('').reduce((acc, letter) => {
+		if (letter !== ' ') {
+			if (acc[letter] === undefined) {
+				acc[letter] = 0;
+			}
+			acc[letter] += 1;
+		}
+		return acc;
+	}, {});
+}
+
+console.log(countWords('code wars code'));
