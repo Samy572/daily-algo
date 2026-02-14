@@ -162,4 +162,56 @@ function countWords(str) {
 	}, {});
 }
 
-console.log(countWords('code wars code'));
+countWords('code wars code');
+
+// kyu 7 return an array of only numbers
+function filter_list(l) {
+	return l.filter((el) => typeof el === 'number');
+}
+
+filter_list(['a', 'b', 1, 2]);
+
+// kyu 7 return non-negative integer as an argument and return it with its digits in descending order ex 1745 => 7541
+
+function descendingOrder(n) {
+	let arr = n
+		.toString()
+		.split('')
+		.map(Number)
+		.sort((a, b) => b - a);
+	return Number(arr.join(''));
+}
+
+descendingOrder(1745);
+
+// kyu 6
+
+function likes(names) {
+	switch (names.length) {
+		case 1:
+			return `${names[0]} likes this`;
+			break;
+		case 2:
+			return `${names[0]} and ${names[1]} like this`;
+			break;
+		case 3:
+			return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+			break;
+		case 0:
+			return 'no one likes this';
+			break;
+		default:
+			return `${names[0]}, ${names[1]} and ${names.length} others like this`;
+			break;
+	}
+}
+
+console.log(likes([]));
+
+// 6kyu create phone number
+function createPhoneNumber(numbers) {
+	const [a, b, c, d, e, f, g, h, i, j] = numbers;
+	return `(${a}${b}${c}) ${d}${e}${f}-${g}${h}${i}${j}`;
+}
+
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])); // "(123) 456-7890"
