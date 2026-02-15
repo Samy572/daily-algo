@@ -206,7 +206,7 @@ function likes(names) {
 	}
 }
 
-console.log(likes([]));
+likes([]);
 
 // 6kyu create phone number
 function createPhoneNumber(numbers) {
@@ -214,4 +214,65 @@ function createPhoneNumber(numbers) {
 	return `(${a}${b}${c}) ${d}${e}${f}-${g}${h}${i}${j}`;
 }
 
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])); // "(123) 456-7890"
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]); // "(123) 456-7890"
+
+// 7kyu find the middle character
+function getMiddle(s) {
+	const isEven = s.length % 2 === 0;
+	let midRange = s.length / 2;
+	if (isEven) {
+		return s.slice(midRange - 1, midRange + 1);
+	}
+	return s.length > 0 ? s[Math.round(midRange - 1)] : s[0];
+}
+
+getMiddle('testo');
+
+// 7kyu square every digit
+function squareDigits(num) {
+	const res = Array.from(String(num), Number)
+		.map((el) => el * el)
+		.join('');
+	return parseInt(res);
+}
+
+squareDigits(3212);
+// 8kyu 
+function repeatStr(n, s) {
+	return Array(n).fill(s).join('');
+}
+
+repeatStr(3, '*');
+
+// 7kyu return the length of the shortest word
+function findShort(s) {
+	let res = s.split(' ').sort((a, b) => a.length - b.length);
+	return res[0].length;
+}
+
+console.log(
+	findShort(
+		`voic uin test debitcoin take over the world maybe who knows perhaps`,
+	),
+);
+
+// 7kyu return true if the string is an isogram false if not
+
+function isIsogram(str) {
+	let set = new Set(str.toLowerCase());
+	return Array.from(set).join('') === str.toLowerCase();
+}
+
+isIsogram('isogram');
+
+// 7kyu return biggest and smallest number from a string
+
+function highAndLow(numbers) {
+	let res = numbers
+		.split(' ')
+		.map(Number)
+		.sort((a, b) => a - b);
+	return `${res[numbers.length -1]} ${res[0]}`;
+}
+
+console.log(highAndLow('1 2 3 45 8 -9 12'));
