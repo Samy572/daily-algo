@@ -237,7 +237,7 @@ function squareDigits(num) {
 }
 
 squareDigits(3212);
-// 8kyu 
+// 8kyu
 function repeatStr(n, s) {
 	return Array(n).fill(s).join('');
 }
@@ -250,10 +250,8 @@ function findShort(s) {
 	return res[0].length;
 }
 
-console.log(
-	findShort(
-		`voic uin test debitcoin take over the world maybe who knows perhaps`,
-	),
+findShort(
+	`voic uin test debitcoin take over the world maybe who knows perhaps`,
 );
 
 // 7kyu return true if the string is an isogram false if not
@@ -272,7 +270,30 @@ function highAndLow(numbers) {
 		.split(' ')
 		.map(Number)
 		.sort((a, b) => a - b);
-	return `${res[numbers.length -1]} ${res[0]}`;
+	return `${res[numbers.length - 1]} ${res[0]}`;
 }
 
-console.log(highAndLow('1 2 3 45 8 -9 12'));
+highAndLow('1 2 3 45 8 -9 12');
+
+// 7 kyu define if the number is a square
+var isSquare = function (n) {
+	return Number.isInteger(Math.sqrt(n));
+};
+
+isSquare(-25);
+
+// 6kyu moove zero at the end
+function moveZeros(arr) {
+	let result = [];
+	let zro = [];
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] !== 0) {
+			result.push(arr[i]);
+		} else {
+			zro.push(arr[i]);
+		}
+	}
+	return [...result, ...zro];
+}
+
+moveZeros([false, 1, 0, 1, 2, 0, 1, 3, 'a']);
