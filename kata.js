@@ -282,7 +282,7 @@ var isSquare = function (n) {
 
 isSquare(-25);
 
-// 6kyu moove zero at the end
+// 5kyu moove zero at the end
 function moveZeros(arr) {
 	let result = [];
 	let zro = [];
@@ -297,3 +297,14 @@ function moveZeros(arr) {
 }
 
 moveZeros([false, 1, 0, 1, 2, 0, 1, 3, 'a']);
+
+//5 kyu
+
+function pigIt(str) {
+	return str
+		.split(' ')
+		.map((el) => `${el.slice(1)}${el[0]}ay `)
+		.join('');
+}
+pigIt('Pig latin is cool'); // should return igPay atinlay siay oolcay
+
