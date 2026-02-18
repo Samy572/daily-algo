@@ -311,7 +311,22 @@ pigIt('Pig latin is cool'); // should return igPay atinlay siay oolcay
 // 5 kyu return the difference of two arrays
 function arrayDiff(a, b) {
 	let res = [...a, ...b];
-	return res.filter((item) =>  !b.includes(item))
+	return res.filter((item) => !b.includes(item));
 }
 
-console.log(arrayDiff([1, 2, 3], [1, 2]));
+arrayDiff([1, 2, 3], [1, 2]);
+
+// 7 kyu find the first non repeated character
+function firstNonRepeated(s) {
+	const arr = s.split('');
+	let result = '';
+	for (const charIndex in arr) {
+		let findUnique = arr.filter((el) => el === arr[charIndex]);
+		if (findUnique.length === 1) {
+			return (result += arr[charIndex]);
+		}
+	}
+	return result.length > 1 ? result : null;
+}
+
+(firstNonRepeated('tttat'));
