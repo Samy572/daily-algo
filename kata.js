@@ -329,4 +329,21 @@ function firstNonRepeated(s) {
 	return result.length > 1 ? result : null;
 }
 
-(firstNonRepeated('tttat'));
+firstNonRepeated('tttat');
+
+// 7kyu compare two string
+
+function XO(str) {
+	return (
+		str
+			.toLowerCase()
+			.split('')
+			.filter((el) => el === 'o').length ===
+		str
+			.toLowerCase()
+			.split('')
+			.filter((el) => el === 'x').length
+	);
+}
+
+XO('xo');
