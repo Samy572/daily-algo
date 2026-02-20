@@ -347,3 +347,9 @@ function XO(str) {
 }
 
 XO('xo');
+
+// 6kyu reverse string if the length of the string is greater than or equal to 5
+function spinWords(string){
+  let res = string.split(' ').map((el) => el.length >= 5 ?  el.split('').reverse().join('') : el)
+  return res.join(' ')
+}
