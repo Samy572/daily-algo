@@ -349,7 +349,49 @@ function XO(str) {
 XO('xo');
 
 // 6kyu reverse string if the length of the string is greater than or equal to 5
-function spinWords(string){
-  let res = string.split(' ').map((el) => el.length >= 5 ?  el.split('').reverse().join('') : el)
-  return res.join(' ')
+function spinWords(string) {
+	let res = string
+		.split(' ')
+		.map((el) => (el.length >= 5 ? el.split('').reverse().join('') : el));
+	return res.join(' ');
 }
+
+// 5kyu return first non repeatable char
+function firstNonRepeatingLetter(s) {
+	const arr = s.split('');
+	let result = '';
+	for (const charIndex in arr) {
+		let findUnique = arr.filter((el) => el === arr[charIndex]);
+		if (findUnique.length === 1) {
+			return (result += arr[charIndex]);
+		}
+	}
+	return result.length > 1 ? result : null;
+}
+
+firstNonRepeatingLetter('bcca');
+
+// 7kyu FizzBuzz fibonacci 
+var fibsFizzBuzz = function (n) {
+	let res = [];
+
+	for (let i = 0; i < n; i++) {
+		if (res.length > 1) {
+			let newVal = res[i - 1] + res[i - 2];
+			res.push(newVal);
+		} else {
+			res.push(1);
+		}
+	}
+	return res.map((el) =>
+		el % 3 === 0 && el % 5 === 0
+			? 'FizzBuzz'
+			: el % 3 === 0
+				? 'Fizz'
+				: el % 5 === 0
+					? 'Buzz'
+					: el,
+	);
+};
+
+console.log(fibsFizzBuzz(10));
