@@ -371,7 +371,7 @@ function firstNonRepeatingLetter(s) {
 
 firstNonRepeatingLetter('bcca');
 
-// 7kyu FizzBuzz fibonacci 
+// 7kyu FizzBuzz fibonacci
 var fibsFizzBuzz = function (n) {
 	let res = [];
 
@@ -394,4 +394,21 @@ var fibsFizzBuzz = function (n) {
 	);
 };
 
-console.log(fibsFizzBuzz(10));
+fibsFizzBuzz(10);
+// 7kyu
+function accum(s) {
+	let arr = [...s];
+	let str = '';
+	for (let i = 0; i < s.length; i++) {
+		let count = i;
+		str += arr[i].toUpperCase();
+		while (count > 0) {
+			str += arr[i].toLowerCase();
+			count--;
+		}
+		str += '-';
+	}
+	return str.slice(0, -1);
+}
+
+accum('ZpglnRxqenU'); //Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu
