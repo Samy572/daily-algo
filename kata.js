@@ -412,3 +412,13 @@ function accum(s) {
 }
 
 accum('ZpglnRxqenU'); //Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu
+
+// kyu 8 return the sum of all numbers from 1 to num
+var summation = function (num) {
+	let res = Array.from({ length: num }, (_, i) => {
+		return i + 1;
+	});
+	return res.reduce((acc, curr) => (acc += curr));
+};
+
+console.log(summation(8));
