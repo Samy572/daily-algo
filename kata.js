@@ -421,4 +421,13 @@ var summation = function (num) {
 	return res.reduce((acc, curr) => (acc += curr));
 };
 
-console.log(summation(8));
+summation(8);
+
+// 7kyu verify if the string end with the ending
+
+function solutionStr(str, ending) {
+	const strLength = -ending.length;
+	return str.slice(strLength) === ending;
+}
+
+console.log(solutionStr('samurai', 'ai'));
