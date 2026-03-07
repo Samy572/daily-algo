@@ -430,4 +430,37 @@ function solutionStr(str, ending) {
 	return str.slice(strLength) === ending;
 }
 
-console.log(solutionStr('samurai', 'ai'));
+solutionStr('samurai', 'ai');
+
+function calculate(a, operator, b) {
+	let res;
+	if (operator === '+') {
+		res = a + b;
+	}
+	if (operator === '-') {
+		res = a - b;
+	}
+	if (operator === '/') {
+		res = a / b;
+	}
+	if (operator === '*') {
+		res = a * b;
+	}
+	return res === typeof Number ? res : null;
+}
+
+calculate(3, '*', 3);
+
+// 6 kyu check if the string is a pangram (a string contains every letter of the alphabet)
+function isPangram(string) {
+	const pangram = 'abcdefghijklmnopqrstuvwxyz';
+	let parseStr = new Set(
+		[...string]
+			.join('')
+			.replace(/[^a-z]/gi, '')
+			.toLowerCase(),
+	);
+	return Array.from(parseStr).sort().join('') === pangram;
+}
+
+console.log(isPangram('The quick brown fox jumps over? the lazy dog.!'));
