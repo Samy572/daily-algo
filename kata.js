@@ -482,6 +482,13 @@ function findUniq(arr) {
 	}
 }
 
-(findUniq([0, 0, 1, 1, 0, 1, 2, 1, 0, 3, 2]));
+findUniq([0, 0, 1, 1, 0, 1, 2, 1, 0, 3, 2]);
 
+// alternative clean to find the unique number
+function findTheUnique(arr) {
+	arr.sort();
+	const unique = arr[0] === arr[1] ? arr[arr.length - 1] : arr[0];
+	return unique;
+}
 
+(findTheUnique([0, 0, 3, 24, 24, 2, 1, 0, 1]));
