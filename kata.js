@@ -463,4 +463,25 @@ function isPangram(string) {
 	return Array.from(parseStr).sort().join('') === pangram;
 }
 
-console.log(isPangram('The quick brown fox jumps over? the lazy dog.!'));
+isPangram('The quick brown fox jumps over? the lazy dog.!');
+
+// 6 kyu find the unique number
+function findUniq(arr) {
+	const res = arr.reduce((acc, curr) => {
+		if (acc[curr] === undefined) {
+			acc[curr] = 1;
+		} else {
+			acc[curr] += 1;
+		}
+		return acc;
+	}, {});
+	for (const occurence in res) {
+		if (res[occurence] === 1) {
+			return Number(occurence);
+		}
+	}
+}
+
+(findUniq([0, 0, 1, 1, 0, 1, 2, 1, 0, 3, 2]));
+
+
