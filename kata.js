@@ -499,4 +499,11 @@ function sumStrings(a, b) {
 	return (BigInt(a) + BigInt(b)).toString();
 }
 
-console.log(sumStrings('4', '5'));
+sumStrings('4', '5');
+
+// 7kyu return minimum and maximum number from an array
+function minMax(arr) {
+	return [Math.min(...arr), Math.max(...arr)];
+}
+
+minMax([1, 2, 3, 4, 5]);
