@@ -491,4 +491,12 @@ function findTheUnique(arr) {
 	return unique;
 }
 
-(findTheUnique([0, 0, 3, 24, 24, 2, 1, 0, 1]));
+findTheUnique([0, 0, 3, 24, 24, 2, 1, 0, 1]);
+
+// 4 kyu sum string
+
+function sumStrings(a, b) {
+	return (BigInt(a) + BigInt(b)).toString();
+}
+
+console.log(sumStrings('4', '5'));
