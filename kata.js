@@ -511,13 +511,8 @@ minMax([1, 2, 3, 4, 5]);
 // 6 kyu return the even or odd number from an array or number
 
 function evenOrOdd(n) {
-	return Array.isArray(n)
-		? n[0] % 2 === 0
-			? 'Even'
-			: 'Odd'
-		: n % 2 === 0
-			? 'Even'
-			: 'Odd';
+	let res = Array.isArray(n) ? n[0] : n;
+	return res % 2 === 0 ? 'Even' : 'Odd';
 }
 
-console.log(evenOrOdd([0]));
+(evenOrOdd([-20]));
