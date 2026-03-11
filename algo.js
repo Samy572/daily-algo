@@ -126,7 +126,8 @@ function areAllUsersValid(
 	users = [
 		{ name: 'Charlie', age: 17, email: 'charlie@example.com' },
 		{ name: 'David', age: 22, email: 'davidexample.com' },
-	]
+
+	],
 ) {
 	return users.every((user) => user.age > 17 && user.email.includes('@'));
 }
@@ -203,7 +204,7 @@ function vowelsFrequency(str = 'Helloo world') {
 	let result = {};
 
 	const vowels = [...str.toLocaleLowerCase()].filter((el) =>
-		'aeiouy'.includes(el)
+		'aeiouy'.includes(el),
 	);
 	for (const vowel of vowels) {
 		if (result[vowel]) {
@@ -256,7 +257,7 @@ average();
 // Write a function wich take a string and capitalize the first letter of each word
 
 function capitalizeFirstLetterOfEachWord(
-	str = 'Hello everyone how are yoU ? '
+	str = 'Hello everyone how are yoU ? ',
 ) {
 	const words = str.toLowerCase().split(' ');
 	capitalizeFirstWord = words.map((el) => {
@@ -338,7 +339,7 @@ shuffleAnArray();
 
 function swapCase(str = 'HELLo WOrlD') {
 	let result = [...str].map((el) =>
-		el === el.toLocaleLowerCase() ? el.toUpperCase() : el.toLowerCase()
+		el === el.toLocaleLowerCase() ? el.toUpperCase() : el.toLowerCase(),
 	);
 	return result.join('');
 }
@@ -359,7 +360,7 @@ reverseEachWord();
 
 function swapCase(str = 'HELLo WOrlD') {
 	let result = [...str].map((el) =>
-		el === el.toLocaleLowerCase() ? el.toUpperCase() : el.toLowerCase()
+		el === el.toLocaleLowerCase() ? el.toUpperCase() : el.toLowerCase(),
 	);
 	return result.join('');
 }
@@ -380,7 +381,7 @@ reverseEachWord('test');
 
 function mergeWithoutDuplicate(
 	arr1 = [283, 58, 33, 22],
-	arr2 = [311, 958, 22, 33]
+	arr2 = [311, 958, 22, 33],
 ) {
 	return [...new Set(arr1, arr2)];
 }
@@ -552,7 +553,7 @@ function mostFrequentItem(arr = ['a', 3, 'a', 'b', 7, 11, 'a']) {
 		}
 	}
 	let result = Object.entries(newObj).find(
-		([key, value]) => value === Math.max(...Object.values(newObj))
+		([key, value]) => value === Math.max(...Object.values(newObj)),
 	)[0];
 	return result;
 }
@@ -614,3 +615,67 @@ function isPolydivisible(num = 1239) {
 }
 
 isPolydivisible();
+
+function findMaximumlength(arr, k) {
+	let result = [];
+
+	for (let i = 0; i < arr.length; i++) {
+		let totalResultArr = result.reduce((acc, cur) => {
+			return (acc += cur);
+		}, 0);
+
+		let fullTotal = arr[i] + totalResultArr;
+
+		if (fullTotal <= k) {
+			result.push(arr[i]);
+			console.log(result);
+		}
+	}
+	return result;
+}
+
+// console.log(findMaximumlength([2, -1, 2, 3, -2, 15, 4], 5));
+
+function parseToRoman(number) {
+	const romans = [
+		{ value: 1000, symbol: 'M' },
+		{ value: 900, symbol: 'CM' },
+		{ value: 500, symbol: 'D' },
+		{ value: 400, symbol: 'CD' },
+		{ value: 100, symbol: 'C' },
+		{ value: 90, symbol: 'XC' },
+		{ value: 50, symbol: 'L' },
+		{ value: 40, symbol: 'XL' },
+		{ value: 10, symbol: 'X' },
+		{ value: 9, symbol: 'IX' },
+		{ value: 5, symbol: 'V' },
+		{ value: 4, symbol: 'IV' },
+		{ value: 1, symbol: 'I' },
+	];
+
+	let result = '';
+
+	for (const { value, symbol } of romans) {
+		while (number >= value) {
+			result += symbol;
+			number -= value;
+		}
+	}
+	return result;
+}
+
+parseToRoman(374); // === "XXXVII"
+// parseToRoman(143); // === "CXLIII" = 143
+// parseToRoman(1234); // === "MCCXXXIV"
+
+function multiply(number) {
+	defineLength = Array.from(String(number), Number).length;
+
+	if (number < 0) {
+		return number * 5 ** (defineLength - 1);
+	}
+	return defineLength === 0 ? 0 : number * 5 ** defineLength;
+}
+
+multiply(-10);
+
