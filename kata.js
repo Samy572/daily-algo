@@ -515,4 +515,18 @@ function evenOrOdd(n) {
 	return res % 2 === 0 ? 'Even' : 'Odd';
 }
 
-(evenOrOdd([-20]));
+evenOrOdd([-20]);
+// 6 kyu generate a hashtag
+function generateHashtag(str) {
+	return str === ''
+		? false
+		: '#' +
+				str
+					.trim()
+					.toLowerCase()
+					.split(/\s+/)
+					.map((el) => el[0].toUpperCase() + el.slice(1))
+					.join('');
+}
+
+(generateHashtag('code wars is nice'));
