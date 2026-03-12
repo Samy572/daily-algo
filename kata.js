@@ -555,3 +555,14 @@ function toJadenCase(st) {
 }
 
 toJadenCase("How can mirrors be real if our eyes aren't real");
+
+// 7kyu ball collector game find the weight
+function ballCollector(detritus) {
+	let filterArr = detritus.filter((el) => el <= 58);
+
+	let weight =
+		filterArr.length === 0 ? 0 : filterArr.reduce((acc, curr) => (acc += curr));
+	return { weight };
+}
+
+console.log(ballCollector([58, 68, 62, 69, 58]));
