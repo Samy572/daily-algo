@@ -529,4 +529,29 @@ function generateHashtag(str) {
 					.join('');
 }
 
-(generateHashtag('code wars is nice'));
+generateHashtag('code wars is nice');
+
+// 8kyu basic operation
+function basicOp(operation, value1, value2) {
+	switch (operation) {
+		case '-':
+			return value1 - value2;
+		case '/':
+			return value1 / value2;
+		case '*':
+			return value1 * value2;
+		case '+':
+			return value1 + value2;
+	}
+}
+
+basicOp('+', 4, 7);
+
+// 6kyu to jadenCase
+
+function toJadenCase(st) {
+	let str = st.toLowerCase().trim().split(' ');
+	return str.map((el) => el[0].toUpperCase() + el.slice(1)).join(' ');
+}
+
+toJadenCase("How can mirrors be real if our eyes aren't real");
