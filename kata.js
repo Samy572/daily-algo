@@ -565,4 +565,22 @@ function ballCollector(detritus) {
 	return { weight };
 }
 
-console.log(ballCollector([58, 68, 62, 69, 58]));
+ballCollector([58, 68, 62, 69, 58]);
+
+function incrementString(str) {
+	const match = str.match(/(\d*)$/);
+	const numberPart = match[0];
+	const stringPart = str.slice(0, -numberPart.length);
+
+	const incremented = (parseInt(numberPart || '0', 10) + 1).toString();
+
+	const padded = incremented.padStart(numberPart.length, '0');
+
+	return stringPart + padded;
+}
+
+var uniqueInOrder = function (iterable) {
+return [...iterable].filter((a, i) => a !== iterable[i-1])
+};
+
+(uniqueInOrder([1234455214]));
