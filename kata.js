@@ -592,4 +592,21 @@ function magicSum(numbers) {
 	return res.length !== 0 ? res.reduce((a, c) => a + c) : 0;
 }
 
-console.log(magicSum([12, 333333, 10, 3]));
+magicSum([12, 333333, 10, 3]);
+
+//7kyu reverse the portion of that string between those two indices inclusive.
+
+function solve(st, a, b) {
+	return (
+		st.slice(0, a) +
+		st
+			.slice(a, b + 1)
+			.split('')
+			.reverse()
+			.join('') +
+		st.slice(b + 1, b.length)
+	);
+}
+
+(solve('codewars', 1, 5)); // cawedors
+
