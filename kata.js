@@ -580,7 +580,16 @@ function incrementString(str) {
 }
 
 var uniqueInOrder = function (iterable) {
-return [...iterable].filter((a, i) => a !== iterable[i-1])
+	return [...iterable].filter((a, i) => a !== iterable[i - 1]);
 };
 
-(uniqueInOrder([1234455214]));
+uniqueInOrder([1234455214]);
+
+// 7kyu The magic sum of 3s is calculated on an array by summing up odd numbers which include the digit 3.
+function magicSum(numbers) {
+	const odd = numbers.length > 0 ? numbers.filter((n) => n % 2 !== 0) : [];
+	const res = odd.filter((n) => Math.abs(n) % 10 === 3);
+	return res.length !== 0 ? res.reduce((a, c) => a + c) : 0;
+}
+
+console.log(magicSum([12, 333333, 10, 3]));
