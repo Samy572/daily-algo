@@ -617,4 +617,17 @@ function longest(s1, s2) {
 	return [...set].join('');
 }
 
-(longest('abcddeaezfa', 'afeafzefhzrmla'));
+longest('abcddeaezfa', 'afeafzefhzrmla');
+
+// 7kyu
+function isKiss(words) {
+	const arr = words.split(' ');
+	const avg = Math.round(
+		arr.reduce((sum, w) => sum + w.length, 0) / arr.length,
+	);
+	return arr.some((w) => w.length > avg + 1)
+		? 'Keep It Simple Stupid'
+		: 'Good work Joe!';
+}
+
+(isKiss('Joe is having no fun'));
