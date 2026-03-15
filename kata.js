@@ -608,5 +608,13 @@ function solve(st, a, b) {
 	);
 }
 
-(solve('codewars', 1, 5)); // cawedors
+solve('codewars', 1, 5); // cawedors
 
+// 7 kyu Return a new sorted string the longest possible, containing distinct letters - each taken only once
+function longest(s1, s2) {
+	const str = s1 + s2;
+	const set = new Set(str.split('').sort());
+	return [...set].join('');
+}
+
+(longest('abcddeaezfa', 'afeafzefhzrmla'));
