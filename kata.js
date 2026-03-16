@@ -630,4 +630,14 @@ function isKiss(words) {
 		: 'Good work Joe!';
 }
 
-(isKiss('Joe is having no fun'));
+isKiss('Joe is having no fun');
+
+//6kyu return the only even or odd number
+
+function findOutlier(integers) {
+	const odd = integers.filter((n) => n % 2 !== 0);
+	const even = integers.filter((n) => n % 2 === 0);
+	return odd.length > even.length ? even[0] : odd[0];
+}
+
+console.log(findOutlier([1, 1, 0, 1, 1]));
