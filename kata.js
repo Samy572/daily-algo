@@ -640,4 +640,11 @@ function findOutlier(integers) {
 	return odd.length > even.length ? even[0] : odd[0];
 }
 
-console.log(findOutlier([1, 1, 0, 1, 1]));
+findOutlier([1, 1, 0, 1, 1]);
+
+// 7kyu filter string from an array
+function filter_list(l) {
+	return l.filter((el) => typeof el === 'number');
+}
+
+console.log(filter_list([1, 2, 'a', 'b']));
