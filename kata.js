@@ -660,4 +660,13 @@ var twoSum = function (nums, target) {
 	}
 };
 
-console.log(twoSum([3, 2, 4, 3], 6));
+twoSum([3, 2, 4, 3], 6);
+
+var addTwoNumbers = function (l1, l2) {
+	const arrOne = l1.reverse();
+	const arrTwo = l2.reverse();
+	return Number(arrOne.join('')) + Number(arrTwo.join(''));
+};
+
+(addTwoNumbers([2, 4, 3], [5, 6, 4]));
+
