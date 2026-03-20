@@ -668,5 +668,23 @@ var addTwoNumbers = function (l1, l2) {
 	return Number(arrOne.join('')) + Number(arrTwo.join(''));
 };
 
-(addTwoNumbers([2, 4, 3], [5, 6, 4]));
+addTwoNumbers([2, 4, 3], [5, 6, 4]);
 
+// LeetCode find longest common prefix
+var longestCommonPrefix = function (strs) {
+	if (!strs.length) return '';
+
+	for (let i = 0; i < strs[0].length; i++) {
+		const char = strs[0][i];
+
+		for (let j = 1; j < strs.length; j++) {
+			if (strs[j][i] !== char) {
+				return strs[0].slice(0, i);
+			}
+		}
+	}
+
+	return strs[0];
+};
+
+console.log(longestCommonPrefix(['abc', 'abc', 'abcd', 'bfc', 'acd', 'dbc']));
