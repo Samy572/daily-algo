@@ -687,4 +687,18 @@ var longestCommonPrefix = function (strs) {
 	return strs[0];
 };
 
-console.log(longestCommonPrefix(['abc', 'abc', 'abcd', 'bfc', 'acd', 'dbc']));
+longestCommonPrefix(['abc', 'abc', 'abcd', 'bfc', 'acd', 'dbc']);
+
+var mergeTwoLists = function (list1, list2) {
+	let lg = list1.concat(list2);
+	return lg;
+};
+
+mergeTwoLists([1, 2, 4], [1, 3, 4]);
+
+// LeetCode medium
+var multiply = function (num1, num2) {
+	return (BigInt(num1) * BigInt(num2)).toString();
+};
+
+(multiply('123456789', '987654321'));
