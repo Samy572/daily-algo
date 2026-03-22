@@ -701,4 +701,13 @@ var multiply = function (num1, num2) {
 	return (BigInt(num1) * BigInt(num2)).toString();
 };
 
-(multiply('123456789', '987654321'));
+multiply('123456789', '987654321');
+
+// LeetCode easy add 1 to an array
+var plusOne = function (digits) {
+	const inc = digits.join('');
+	const res = BigInt(inc) + 1n;
+	return Array.from(String(res), Number);
+};
+
+plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]);
