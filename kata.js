@@ -711,3 +711,18 @@ var plusOne = function (digits) {
 };
 
 plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]);
+
+// Reverse str to integer
+var reverse = function (x) {
+	let reverseStr = x.toString().split('').reverse().join('');
+	const isNegative = reverseStr.endsWith('-');
+
+	let res = isNegative ? '-' + reverseStr.slice(0, -1) : reverseStr;
+
+	if (Number.isSafeInteger(Number(res))) {
+		return Number(res);
+	}
+	return BigInt(res);
+};
+
+console.log(reverse(1534236469));
