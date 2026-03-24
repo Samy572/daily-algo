@@ -725,4 +725,11 @@ var reverse = function (x) {
 	return BigInt(res);
 };
 
-console.log(reverse(1534236469));
+reverse(1534236469);
+
+// Return length of last word 
+var lengthOfLastWord = function (s) {
+	return s.trim().split(' ').reverse()[0].length;
+};
+
+console.log(lengthOfLastWord('   fly me   to   the moon  '));
