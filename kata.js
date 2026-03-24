@@ -727,9 +727,24 @@ var reverse = function (x) {
 
 reverse(1534236469);
 
-// Return length of last word 
+// Return length of last word
 var lengthOfLastWord = function (s) {
 	return s.trim().split(' ').reverse()[0].length;
 };
 
-console.log(lengthOfLastWord('   fly me   to   the moon  '));
+lengthOfLastWord('   fly me   to   the moon  ');
+
+// Remove element from an array without duplication
+function removeElement(nums, val) {
+	let k = 0;
+	for (let num of nums) {
+		if (num !== val) {
+			nums[k] = num;
+			k++;
+		}
+	}
+	nums.length = k;
+	return nums;
+}
+
+console.log(removeElement([1, 2, 3, 4, 5], 3));
