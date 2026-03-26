@@ -747,4 +747,45 @@ function removeElement(nums, val) {
 	return nums;
 }
 
-console.log(removeElement([1, 2, 3, 4, 5], 3));
+removeElement([1, 2, 3, 4, 5], 3);
+
+// Shuffle array from an value
+var shuffle = function (nums, n) {
+	const res = [];
+
+	for (let i = 0; i < n; i++) {
+		res.push(nums[i]);
+		res.push(nums[i + n]);
+	}
+
+	return res.filter((el) => el !== undefined);
+};
+
+console.log(shuffle([1, 2, 3, 4, 15, 55, 7, 5, 8], 7));
+
+var findMaxConsecutiveOnes = function (nums) {
+	const res = [];
+	let count = 0;
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] === 1) {
+			count++;
+		}
+		if (nums[i] === 0) {
+			count = 0;
+		}
+	}
+};
+
+findMaxConsecutiveOnes[(0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1)];
+
+// Chunk array by size
+var chunk = function (arr, size) {
+	const res = [];
+
+	while (arr.length > 0) {
+		res.push(arr.splice(0, size));
+	}
+	return res;
+};
+
+console.log(chunk([12, 24, 36, 58, 7, 22], 2));
