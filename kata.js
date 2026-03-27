@@ -761,7 +761,7 @@ var shuffle = function (nums, n) {
 	return res.filter((el) => el !== undefined);
 };
 
-console.log(shuffle([1, 2, 3, 4, 15, 55, 7, 5, 8], 7));
+shuffle([1, 2, 3, 4, 15, 55, 7, 5, 8], 7);
 
 var findMaxConsecutiveOnes = function (nums) {
 	const res = [];
@@ -788,4 +788,16 @@ var chunk = function (arr, size) {
 	return res;
 };
 
-console.log(chunk([12, 24, 36, 58, 7, 22], 2));
+chunk([12, 24, 36, 58, 7, 22], 2);
+// 8kyu
+function tripleTrouble(one, two, three) {
+	let str = '';
+
+	for (let i = 0; i < one.length; i++) {
+		str += one[i] + two[i] + three[i];
+	}
+
+	return str;
+}
+
+(tripleTrouble('LLh', 'euo', 'xtr')); // Should be return LexLuthor
