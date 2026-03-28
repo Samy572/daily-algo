@@ -800,4 +800,17 @@ function tripleTrouble(one, two, three) {
 	return str;
 }
 
-(tripleTrouble('LLh', 'euo', 'xtr')); // Should be return LexLuthor
+tripleTrouble('LLh', 'euo', 'xtr'); // Should be return LexLuthor
+// 7kyu maximum difference of length between two strings
+function mxdiflg(a1, a2) {
+	if (a1.length === 0 || a2.length === 0) return -1;
+
+	return Math.max(
+		Math.max(...a1.map((el) => el.length)) -
+			Math.min(...a2.map((el) => el.length)),
+		Math.max(...a2.map((el) => el.length)) -
+			Math.min(...a1.map((el) => el.length)),
+	);
+}
+
+console.log(mxdiflg(['hoqq'], ['tttoowwwmmww']));
