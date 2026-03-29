@@ -813,4 +813,24 @@ function mxdiflg(a1, a2) {
 	);
 }
 
-console.log(mxdiflg(['hoqq'], ['tttoowwwmmww']));
+mxdiflg(['hoqq'], ['tttoowwwmmww']);
+
+// 6 kyu find duplicate count
+function duplicateCount(text) {
+	const arr = text
+		.toLowerCase()
+		.split('')
+		.reduce((acc, curr) => {
+			if (acc[curr] === undefined) {
+				acc[curr] = 0;
+			}
+			acc[curr] += 1;
+			return acc;
+		}, {});
+	let sortedItem = Object.values(arr)
+		.sort((a, b) => b - a)
+		.filter((el) => el > 1);
+	return sortedItem.length;
+}
+
+console.log(duplicateCount('Indivisibilities'));
