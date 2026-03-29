@@ -833,4 +833,16 @@ function duplicateCount(text) {
 	return sortedItem.length;
 }
 
-console.log(duplicateCount('Indivisibilities'));
+duplicateCount('Indivisibilities');
+
+// 6kyu count occurence of each character and replace with '(' or ')'
+function countOccurence(str) {
+	let count = {};
+	const strArr = str.toLowerCase().split('');
+	for (const char of strArr) {
+		count[char] = (count[char] ?? 0) + 1;
+	}
+	return strArr.map((el) => (count[el] > 1 ? ')' : '(')).join('');
+}
+
+console.log(countOccurence('(( @"),'));
