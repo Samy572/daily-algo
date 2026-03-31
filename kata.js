@@ -861,4 +861,13 @@ function generateHashtag(str) {
 
 	return res.length > 140 ? false : res;
 }
-(generateHashtag('unT est'));
+generateHashtag('unT est');
+
+// Narcissistic Number 6kyu
+function narcissistic(value) {
+	const arr = Array.from(String(value), Number);
+	const pow = arr.map((el) => el ** arr.length).reduce((acc, curr) => acc+=curr);
+	return pow === value
+}
+
+console.log(narcissistic(153));
