@@ -845,4 +845,20 @@ function countOccurence(str) {
 	return strArr.map((el) => (count[el] > 1 ? ')' : '(')).join('');
 }
 
-console.log(countOccurence('(( @"),'));
+countOccurence('(( @"),');
+// Generate Hashtag 6kyu
+
+function generateHashtag(str) {
+	if (!str.trim()) return false;
+
+	let res =
+		'#' +
+		str
+			.trim()
+			.split(/\s+/)
+			.map((el) => el[0].toUpperCase() + el.slice(1).toLowerCase())
+			.join('');
+
+	return res.length > 140 ? false : res;
+}
+(generateHashtag('unT est'));
