@@ -866,8 +866,32 @@ generateHashtag('unT est');
 // Narcissistic Number 6kyu
 function narcissistic(value) {
 	const arr = Array.from(String(value), Number);
-	const pow = arr.map((el) => el ** arr.length).reduce((acc, curr) => acc+=curr);
-	return pow === value
+	const pow = arr
+		.map((el) => el ** arr.length)
+		.reduce((acc, curr) => (acc += curr));
+	return pow === value;
 }
 
-console.log(narcissistic(153));
+narcissistic(153);
+
+// Leetcode find max consecutive one
+var findMaxConsecutiveOnes = function (nums) {
+	let res = [];
+	let count = 0;
+
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] !== 0) {
+			count++;
+		} else {
+			if (count > 0) {
+				res.push(count);
+				count = 0;
+			}
+		}
+	}
+	if (count > 1) res.push(count);
+
+	return res.sort((a, b) => a - b).pop();
+};
+
+console.log(findMaxConsecutiveOnes([1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1]));
