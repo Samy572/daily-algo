@@ -894,4 +894,19 @@ var findMaxConsecutiveOnes = function (nums) {
 	return res.sort((a, b) => a - b).pop();
 };
 
-console.log(findMaxConsecutiveOnes([1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1]));
+findMaxConsecutiveOnes([1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1]);
+
+// 7kyu sequence to one
+function seqToOne(n) {
+	const res = Array.from({ length: Math.abs(n) }, (_, i) => {
+		if (n > 0) {
+			return n - i;
+		} else {
+			return n + i ;
+		}
+	});
+	if(n < 0 || n === 0){res.push(0,1)}
+	return res;
+}
+
+(seqToOne(0));
