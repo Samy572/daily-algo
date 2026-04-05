@@ -902,11 +902,35 @@ function seqToOne(n) {
 		if (n > 0) {
 			return n - i;
 		} else {
-			return n + i ;
+			return n + i;
 		}
 	});
-	if(n < 0 || n === 0){res.push(0,1)}
+	if (n < 0 || n === 0) {
+		res.push(0, 1);
+	}
 	return res;
 }
 
-(seqToOne(0));
+seqToOne(0);
+
+// 5kyu scramble check if two strings are anagram of each other
+function scramble(str1, str2) {
+	const res = {};
+	for (const char of str1) {
+		if (res[char] === undefined) {
+			res[char] = 1;
+		} else {
+			res[char] += 1;
+		}
+	}
+	for (const char of str2) {
+		if (res[char] === undefined) {
+			return false;
+		} else {
+			res[char] --;
+		}
+	}
+	return true;
+}
+
+(scramble('cedewaraaossoqqyt', 'codzewars'));
