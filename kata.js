@@ -927,10 +927,18 @@ function scramble(str1, str2) {
 		if (res[char] === undefined) {
 			return false;
 		} else {
-			res[char] --;
+			res[char]--;
 		}
 	}
 	return true;
 }
 
-(scramble('cedewaraaossoqqyt', 'codzewars'));
+scramble('cedewaraaossoqqyt', 'codzewars');
+
+// 8kyu century from year
+function century(year) {
+return year % 100 === 0 ? year/100: Math.floor(year/100) +1
+
+}
+
+(century(1800));
