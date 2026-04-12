@@ -937,8 +937,23 @@ scramble('cedewaraaossoqqyt', 'codzewars');
 
 // 8kyu century from year
 function century(year) {
-return year % 100 === 0 ? year/100: Math.floor(year/100) +1
-
+	return year % 100 === 0 ? year / 100 : Math.floor(year / 100) + 1;
 }
 
-(century(1800));
+century(1800);
+
+function twoSumTest(nums, target) {
+	let left = 0;
+	let right = nums.length - 1;
+
+	while (left < right) {
+		const total = nums[left] + nums[right];
+		if (total === target) {
+			return [left, right];
+		}
+		if (total < target) left++;
+		else right--;
+	}
+}
+
+console.log(twoSumTest([1, 4, 7, 12, 22, 33], 5));
