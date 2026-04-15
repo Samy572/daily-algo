@@ -955,5 +955,21 @@ function twoSumTest(nums, target) {
 		else right--;
 	}
 }
+(twoSumTest([1, 4, 7, 12, 22, 33], 5));
 
-console.log(twoSumTest([1, 4, 7, 12, 22, 33], 5));
+
+
+function firstNonRepeatingLetter(s) {
+	const arr = s.split('');
+	let result = '';
+	for (const charIndex in arr) {
+		let findUnique = arr.filter((el) => el.toLowerCase() === arr[charIndex].toLowerCase());
+		if (findUnique.length === 1) {
+			return (result += arr[charIndex]);
+		}
+	}
+	return  s.length > 0 ? result: s.length === 1 ? s : result
+}
+
+console.log(firstNonRepeatingLetter('sTreSS'))
+
