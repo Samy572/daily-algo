@@ -955,21 +955,36 @@ function twoSumTest(nums, target) {
 		else right--;
 	}
 }
-(twoSumTest([1, 4, 7, 12, 22, 33], 5));
-
-
+twoSumTest([1, 4, 7, 12, 22, 33], 5);
 
 function firstNonRepeatingLetter(s) {
 	const arr = s.split('');
 	let result = '';
 	for (const charIndex in arr) {
-		let findUnique = arr.filter((el) => el.toLowerCase() === arr[charIndex].toLowerCase());
+		let findUnique = arr.filter(
+			(el) => el.toLowerCase() === arr[charIndex].toLowerCase(),
+		);
 		if (findUnique.length === 1) {
 			return (result += arr[charIndex]);
 		}
 	}
-	return  s.length > 0 ? result: s.length === 1 ? s : result
+	return s.length > 0 ? result : s.length === 1 ? s : result;
 }
 
-console.log(firstNonRepeatingLetter('sTreSS'))
+firstNonRepeatingLetter('sTreSS');
 
+// 6kyu Some numbers have funny properties. For example: 89 --> 8¹ + 9² = 89 * 1 |  695 --> 6² + 9³ + 5⁴= 1390 = 695 * 2
+
+function digPow(n, p) {
+	function digPow(n, p) {
+		const arr = [];
+		Array.from(String(n), Number).forEach((el, i) => {
+			arr.push(Math.pow(el, p));
+			p++;
+		});
+		let res = arr.reduce((a, b) => a + b) / n;
+		return Number.isInteger(res) ? res : -1;
+	}
+}
+
+console.log(digPow(695, 2));
