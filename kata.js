@@ -987,4 +987,17 @@ function digPow(n, p) {
 	}
 }
 
-console.log(digPow(695, 2));
+digPow(695, 2);
+
+function order(words) {
+	const res = [];
+	const arr = words.split(' ');
+	arr.forEach((el, i) => {
+		const findTheGoodElement = arr.find((el) => el.includes(i + 1));
+		res.push(findTheGoodElement);
+	});
+	return res.join(' ');
+}
+
+order('is2 Thi1s T4est 3a');
+

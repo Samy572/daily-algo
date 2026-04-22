@@ -126,7 +126,6 @@ function areAllUsersValid(
 	users = [
 		{ name: 'Charlie', age: 17, email: 'charlie@example.com' },
 		{ name: 'David', age: 22, email: 'davidexample.com' },
-
 	],
 ) {
 	return users.every((user) => user.age > 17 && user.email.includes('@'));
@@ -679,3 +678,10 @@ function multiply(number) {
 
 multiply(-10);
 
+function pushUp(nums) {
+	return Array.from({ length: nums }, (_, i) => (i += 1))
+		.map((el) => el * 2)
+		.reduce((a, v) => a + v);
+}
+
+console.log(pushUp(10));
