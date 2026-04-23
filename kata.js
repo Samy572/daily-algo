@@ -1021,3 +1021,18 @@ function gimmeTheLetters(sp) {
 }
 
 gimmeTheLetters('a-b');
+
+// 6kyu split strings like this "abcdefg" to "ab", "cd", "ef", "g_" 
+
+function sol(str) {
+	const arr = str.split('');
+	const res = [];
+	for (let i = 0; i < arr.length; i += 2) {
+		if (arr[i + 1] !== undefined || null) {
+			res.push(arr[i] + arr[i + 1]);
+		} else res.push(arr[i] + '_');
+	}
+	return res;
+}
+
+console.log(sol('abcdefg'));
