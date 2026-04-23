@@ -1001,3 +1001,23 @@ function order(words) {
 
 order('is2 Thi1s T4est 3a');
 
+// 7kyu gimme the letters
+function gimmeTheLetters(sp) {
+	const firstLetter = sp.split('')[0];
+	const lastLetter = sp.split('')[2];
+	const alpha =
+		firstLetter === firstLetter.toUpperCase()
+			? 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('')
+			: 'abcdefghijklmnopqrstuvwxyz'.split('');
+	const firstCharacter = alpha.findIndex((el) => el === firstLetter);
+	const lastCharacter = alpha.findIndex((el) => el === lastLetter);
+	if (lastCharacter - firstCharacter === 1) {
+		return firstLetter + lastLetter;
+	}
+	if (lastCharacter === undefined) {
+		return firstLetter;
+	}
+	return alpha.slice(firstCharacter, lastCharacter).join('') + lastLetter;
+}
+
+gimmeTheLetters('a-b');
