@@ -1022,7 +1022,7 @@ function gimmeTheLetters(sp) {
 
 gimmeTheLetters('a-b');
 
-// 6kyu split strings like this "abcdefg" to "ab", "cd", "ef", "g_" 
+// 6kyu split strings like this "abcdefg" to "ab", "cd", "ef", "g_"
 
 function sol(str) {
 	const arr = str.split('');
@@ -1035,4 +1035,20 @@ function sol(str) {
 	return res;
 }
 
-console.log(sol('abcdefg'));
+sol('abcdefg');
+
+const bot = {
+	message(prompt) {
+		const operator = prompt.split(' ')[0];
+		const filterNum = prompt
+			.replace(/[a-z.]/gi, '')
+			.split(' ')
+			.filter((el) => el !== '');
+		if (operator === 'Add') {
+			return parseInt(filterNum[0]) + parseInt(filterNum[1]);
+		}
+		return parseInt(filterNum[0]) - parseInt(filterNum[1]);
+	},
+};
+
+console.log(bot.message('Subtract 15 from 20.'));
