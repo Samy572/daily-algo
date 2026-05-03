@@ -1065,4 +1065,32 @@ function twoPointerPalindrome(str) {
 	return true;
 }
 
-console.log(twoPointerPalindrome('kayak'));
+twoPointerPalindrome('kayak');
+
+function findMissingLetter(array) {
+	const code = array[0].charCodeAt(0);
+	return code;
+}
+
+findMissingLetter(['a', 'b', 'c', 'd', 'z']);
+
+// 6kyu sum intervals
+function sumIntervals(intervals) {
+	let round = 0;
+	const res = [];
+
+	while (intervals.length > round) {
+		res.push(intervals[round][1] - intervals[round][0]);
+		round++;
+	}
+
+	return res.reduce((a, b) => a + b);
+}
+
+console.log(
+	sumIntervals([
+		[1, 4],
+		[7, 10],
+		[3, 5],
+	]),
+);
