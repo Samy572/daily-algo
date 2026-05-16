@@ -1096,4 +1096,15 @@ function countConsonants(str) {
 	return [...new Set(filteredStr)].length;
 }
 
-console.log(countConsonants('Count my unique consonants!!'));
+countConsonants('Count my unique consonants!!');
+
+// 7kyu Evens times last
+function evenLast(numbers) {
+	if (numbers.length === []) return 0;
+
+	const lastIndex = numbers[numbers.length - 1];
+	const item = numbers.filter((el, i) => i % 2 === 0).reduce((a, b) => a + b);
+	return item * lastIndex;
+}
+
+(evenLast([2]));
