@@ -1078,7 +1078,6 @@ findMissingLetter(['a', 'b', 'c', 'd', 'z']);
 function sumIntervals(intervals) {
 	let round = 0;
 	const res = [];
-
 	while (intervals.length > round) {
 		res.push(intervals[round][1] - intervals[round][0]);
 		round++;
@@ -1087,10 +1086,14 @@ function sumIntervals(intervals) {
 	return res.reduce((a, b) => a + b);
 }
 
-console.log(
-	sumIntervals([
-		[1, 4],
-		[7, 10],
-		[3, 5],
-	]),
-);
+function countConsonants(str) {
+	const vowel = 'aeiou'.split('');
+	const filteredStr = str
+		.toLowerCase()
+		.replace(/[^a-zA-Z0-9]/g, '')
+		.split('')
+		.filter((el) => !vowel.includes(el));
+	return [...new Set(filteredStr)].length;
+}
+
+console.log(countConsonants('Count my unique consonants!!'));
