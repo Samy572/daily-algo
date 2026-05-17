@@ -1165,3 +1165,17 @@ function findMissingLetters(array) {
 }
 
 findMissingLetters(['d', 'e', 'g', 'h', 'i']);
+
+function findMissingNumbers(arr) {
+	const max = Math.max(...arr);
+	const min = Math.min(...arr);
+	const res = [];
+	for (let i = min; i < max; i++) {
+		if (!arr.includes(i)) {
+			res.push(i);
+		}
+	}
+	return res;
+}
+
+(findMissingNumbers([-3, -2, 1, 4]));
