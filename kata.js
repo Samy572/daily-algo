@@ -1107,4 +1107,16 @@ function evenLast(numbers) {
 	return item * lastIndex;
 }
 
-(evenLast([2]));
+evenLast([2]);
+
+// 7kyu Word values
+
+function wordValue(words) {
+	const alpha = ' abcdefghijklmnopqrstuvwxyz'.split('');
+	const arr = words
+		.map((word) => word.split('').map((letter) => alpha.indexOf(letter)))
+		.map((word) => word.reduce((a, b) => a + b, 0));
+		return arr.map((num, i) => num *(1+i))
+}
+
+(wordValue(['codewars', 'is', 'fun']));
