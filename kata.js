@@ -1121,12 +1121,12 @@ function wordValue(words) {
 
 wordValue(['codewars', 'is', 'fun']);
 
-// 4kyu format duration 
+// 4kyu format duration
 function formatDuration(seconds) {
 	if (seconds === 0) return 'now';
 	let total = seconds;
-	const years = Math.floor(seconds / (365 * 24 * 3600));
-	total = seconds -= years * 365 * 24 * 3600;
+	const year = Math.floor(seconds / (365 * 24 * 3600));
+	total = seconds -= year * 365 * 24 * 3600;
 	const day = Math.floor(total / 86400);
 	total = seconds -= day * 86400;
 	const hour = Math.floor(seconds / 3600);
@@ -1150,4 +1150,18 @@ function formatDuration(seconds) {
 	return res.slice(0, -1).join(', ') + ' and ' + res.at(-1);
 }
 
-console.log(formatDuration(3660));
+formatDuration(3660);
+
+function findMissingLetters(array) {
+	const az = 'abcdefghijklmnopqrstuvwxyz';
+	const checkCase =
+		array[0] === array[0].toUpperCase() ? az.toUpperCase().split('') : az;
+	const range = array.map((el) => checkCase.indexOf(el));
+	for (let i = 0 + 1; i < range.length; i++) {
+		if (range[i] !== range[i - 1] + 1) {
+			return checkCase[range[i] - 1];
+		}
+	}
+}
+
+findMissingLetters(['d', 'e', 'g', 'h', 'i']);
