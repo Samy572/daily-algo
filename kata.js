@@ -1109,14 +1109,45 @@ function evenLast(numbers) {
 
 evenLast([2]);
 
-// 7kyu Word values
+// 7kyu Word value
 
 function wordValue(words) {
 	const alpha = ' abcdefghijklmnopqrstuvwxyz'.split('');
 	const arr = words
 		.map((word) => word.split('').map((letter) => alpha.indexOf(letter)))
 		.map((word) => word.reduce((a, b) => a + b, 0));
-		return arr.map((num, i) => num *(1+i))
+	return arr.map((num, i) => num * (1 + i));
 }
 
-(wordValue(['codewars', 'is', 'fun']));
+wordValue(['codewars', 'is', 'fun']);
+
+// 4kyu format duration 
+function formatDuration(seconds) {
+	if (seconds === 0) return 'now';
+	let total = seconds;
+	const years = Math.floor(seconds / (365 * 24 * 3600));
+	total = seconds -= years * 365 * 24 * 3600;
+	const day = Math.floor(total / 86400);
+	total = seconds -= day * 86400;
+	const hour = Math.floor(seconds / 3600);
+	total = seconds -= hour * 3600;
+	const minute = Math.floor(total / 60);
+	total = seconds -= minute * 60;
+	const res = [];
+
+	if (year > 0) res.push(`${year} year${year > 1 ? 's' : ''}`);
+	if (day > 0) res.push(`${day} day${day > 1 ? 's' : ''}`);
+	if (hour > 0) res.push(`${hour} hour${hour > 1 ? 's' : ''}`);
+	if (minute > 0) res.push(`${minute} minute${minute > 1 ? 's' : ''}`);
+	if (total > 0) res.push(`${total} second${total > 1 ? 's' : ''}`);
+
+	if (res.length === 1) return res[0];
+
+	if (res.length === 2) {
+		return res.join(' and ');
+	}
+
+	return res.slice(0, -1).join(', ') + ' and ' + res.at(-1);
+}
+
+console.log(formatDuration(3660));
