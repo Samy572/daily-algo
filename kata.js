@@ -1178,4 +1178,18 @@ function findMissingNumbers(arr) {
 	return res;
 }
 
-(findMissingNumbers([-3, -2, 1, 4]));
+findMissingNumbers([-3, -2, 1, 4]);
+
+// 6kyu arr not sorted
+function twoSumKata(numbers, target) {
+	for (let i = 0; i < numbers.length; i++) {
+		for (let j = i + 1; j < numbers.length; j++) {
+			const total = numbers[i] + numbers[j];
+			if (total === target) {
+				return [i, j];
+			}
+		}
+	}
+	return [];
+}
+(twoSumKata([122,55,45,86,13,57,45,2,32,15], 88));
